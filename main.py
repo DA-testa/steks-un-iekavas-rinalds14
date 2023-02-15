@@ -39,9 +39,12 @@ def main():
             with open(f"test/{i}") as f:
                 text = f.read()
                 mismatch = find_mismatch(text)
+                # Printing answer, write your code here
                 print(mismatch)
     if text == "I":
+        text = input()
         mismatch = find_mismatch(text)
+        # Printing answer, write your code here
         print(mismatch)
 
 
