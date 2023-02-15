@@ -12,6 +12,8 @@ def are_matching(left, right):
 def find_mismatch(text):
     opening_brackets_stack = []
     for i, next in enumerate(text):
+        if next == '\n':
+            continue
         if next in "([{":
             # Process opening bracket, write your code here
             opening_brackets_stack.append(Bracket(next, i + 1))
@@ -31,12 +33,10 @@ def find_mismatch(text):
 
 
 def main():
-    choice = input()
-    if choice == "I":
-        text = input()
-        mismatch = find_mismatch(text)
-        # Printing answer, write your code here
-        print(mismatch)
+    text = input()
+    mismatch = find_mismatch(text)
+    # Printing answer, write your code here
+    print(mismatch)
 
 
 if __name__ == "__main__":
