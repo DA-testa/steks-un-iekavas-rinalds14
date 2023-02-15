@@ -12,6 +12,8 @@ def are_matching(left, right):
 def find_mismatch(text):
     opening_brackets_stack = []
     for i, next in enumerate(text):
+        if next == '\n':
+            continue
         if next in "([{":
             # Process opening bracket, write your code here
             opening_brackets_stack.append(Bracket(next, i + 1))
@@ -37,13 +39,11 @@ def main():
             with open(f"test/{i}") as f:
                 text = f.read()
                 mismatch = find_mismatch(text)
-                # Printing answer, write your code here
                 print(mismatch)
-    if "I" in text and "\n" in text:
-        text = text.split("\n")[0]
-    mismatch = find_mismatch(text)
-    # Printing answer, write your code here
-    print(mismatch)
+    else:
+        text = input()
+        mismatch = find_mismatch(text)
+        print(mismatch)
 
 
 if __name__ == "__main__":
