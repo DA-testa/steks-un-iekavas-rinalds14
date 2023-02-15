@@ -32,7 +32,7 @@ def find_mismatch(text):
     return "Success"
 
 def main():
-    choice = input("F for files I for input:")
+    choice = input()
     file_path = os.path.join("steks-un-iekavas-rinalds14", 'test')
     if choice == "F":
         for i in range(6):
@@ -44,8 +44,6 @@ def main():
         text = input()
         mismatch = find_mismatch(text)
         print(mismatch)
-    else:
-        print("There is no other choice :P")
 
 if __name__ == "__main__":
     main()
