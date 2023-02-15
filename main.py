@@ -34,6 +34,7 @@ def find_mismatch(text):
 
 def main():
     text = input()
+    print(f"input: {text}")
     if text == "F":
         for i in range(6):
             with open(f"test/{i}") as f:
